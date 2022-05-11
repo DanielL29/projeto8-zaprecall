@@ -14,6 +14,7 @@
     font-weight: bold;
     box-sizing: border-box;
     margin-bottom: 25px;
+    transition: all 300ms ease-in-out;
 }
 
 .card ion-icon {
@@ -22,15 +23,17 @@
 }
 
 .card.selected {
+    transition: all 300ms ease-in-out;
     height: 131px;
     background-color: #FFFFD5;
     padding-top: 18px;
     padding-bottom: 6px;
     font-size: 18px;
     align-items: flex-start;
+    position: relative;
 }
 
-.card.selected img {
+.card.selected .face img {
     width: 30px;
     height: 20px;
     align-self: flex-end;
@@ -39,4 +42,58 @@
 
 .card.selected img:hover {
     transform: scaleX(-1);
+}
+
+.face {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    height: 82%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+}
+
+.answer {
+    transform: rotateY(180deg);
+}
+
+.card.selected.flipped .answer {
+    transform: rotateY(0deg);
+}
+
+.card.selected.flipped .question {
+    transform: rotateY(-180deg);
+}
+
+.card.selected button {
+    height: 37px;
+    width: 85px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    transition: all 200ms ease-in-out;
+}
+
+.card.selected button:hover {
+    filter: brightness(0.9);
+}    
+
+.card.selected .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.red {
+    background-color: #FF3030;
+}
+
+.yellow {
+    background-color: #FF922E;
+}
+
+.green {
+    background-color: #2FBE34;
 }
