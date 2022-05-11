@@ -11,6 +11,9 @@ export default function Playing() {
                 <h1>ZapRecall</h1>
             </div>
             <Card />
+            <Card />
+            <Card />
+            <Card />
             <Progress />
         </div>
     )
