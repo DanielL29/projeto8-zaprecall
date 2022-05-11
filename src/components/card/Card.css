@@ -33,6 +33,10 @@
     position: relative;
 }
 
+.card.selected.large {
+    height: 200px;
+}
+
 .card.selected .face img {
     width: 30px;
     height: 20px;
