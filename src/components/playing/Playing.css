@@ -1,0 +1,23 @@
+.playing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 42px;
+}
+
+.playing .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 36px;
+    width: 235px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.playing .title img {
+    width: 52px;
+    height: 60px;
+}

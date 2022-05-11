@@ -1,0 +1,21 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 300px;
+    height: 65px;
+    background-color: #fff;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    padding: 0 15px;
+	box-sizing: border-box;
+}
+
+.card ion-icon {
+    width: 23px;
+    height: 23px;
+}
