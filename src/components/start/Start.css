@@ -1,0 +1,42 @@
+.start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.start-screen img {
+    width: 136px;
+    height: 161px;
+}
+
+.start-screen h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.start-screen button {
+    width: 246px;
+    height: 54px;
+    background-color: #fff;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #D70900;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.start-screen button:hover {
+    transform: scale(1.10);
+}
+
+.hidden {
+    display: none;
+}
