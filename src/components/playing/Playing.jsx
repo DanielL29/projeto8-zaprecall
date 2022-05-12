@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Card from "../card/Card";
 import Progress from "../progress/Progress";
-import { deck } from "../../mock/data";
 import './Playing.css'
 
-export default function Playing({ setStart, goal }) {
+export default function Playing({ setStart, goal, deck }) {
     const [answers, setAnswers] = useState([])
     const [resultIcon, setResultIcon] = useState('sad')
     const [result, setResult] = useState('Putz...')
@@ -21,7 +20,6 @@ export default function Playing({ setStart, goal }) {
                 counter++
             }
         }
-        console.log(goal)
 
         if(counter >= Number(goal)) {
             setResultIcon('party')
@@ -30,7 +28,12 @@ export default function Playing({ setStart, goal }) {
         }
     }
 
+    function shuffleCards() {
+        return Math.random() - 0.5
+    }
+
     function LoadDeck() {
+        deck.sort(shuffleCards)
         return deck.map((flashcard, i) => {
             return (
                 <Card key={i} 

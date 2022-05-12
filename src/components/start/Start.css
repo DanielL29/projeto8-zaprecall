@@ -24,7 +24,7 @@
 }
 
 
-.start-screen input {
+.start-screen input, .start-screen select {
     width: 232px;
     height: 41px;
     background-color: #fff;
@@ -37,6 +37,14 @@
     border: none;
     padding-left: 10px;
     margin-bottom: 18px;
+}
+
+.start-screen select {
+    width: 242px;
+}
+
+input::placeholder {
+    color: #ADADAD;
 }
 
 input::-webkit-outer-spin-button,
