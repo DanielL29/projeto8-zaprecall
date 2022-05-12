@@ -15,47 +15,16 @@ export default function Playing({ setStart, goal, deck }) {
 
     function showResult() {
         let counter = 0
-        for(let i = 0; i < answers.length; i++) {
-            if(answers[i].icon === 'checkmark-circle') {
+        for (let i = 0; i < answers.length; i++) {
+            if (answers[i].icon === 'checkmark-circle') {
                 counter++
             }
         }
-
-        if(counter >= Number(goal)) {
+        if (counter >= Number(goal)) {
             setResultIcon('party')
             setResult('Parabéns!')
             setMessage('Você não esqueceu de nenhum flashcard!')
         }
-    }
-
-    function shuffleCards() {
-        return Math.random() - 0.5
-    }
-
-    function LoadDeck() {
-        deck.sort(shuffleCards)
-        return deck.map((flashcard, i) => {
-            return (
-                <Card key={i} 
-                    index={i + 1} 
-                    question={flashcard.question} 
-                    answer={flashcard.answer} 
-                    large={flashcard.large} 
-                    setAnswers={setAnswers}
-                    answers={answers}
-                />
-            )
-        })
-    }
-
-    function LoadDeckAnswers() {
-        return answers.map((item, i) => {
-            return (
-                <div key={i} className={item.color}>
-                    <ion-icon name={item.icon}></ion-icon>
-                </div>
-            )
-        })
     }
 
     return (
@@ -64,9 +33,26 @@ export default function Playing({ setStart, goal, deck }) {
                 <img src="./images/logo.png" alt="small-logo" />
                 <h1>ZapRecall</h1>
             </div>
-            {LoadDeck()}
+            {deck.map((flashcard, i) => {
+                return (
+                    <Card key={i}
+                        index={i + 1}
+                        question={flashcard.question}
+                        answer={flashcard.answer}
+                        large={flashcard.large}
+                        setAnswers={setAnswers}
+                        answers={answers}
+                    />
+                )
+            })}
             <Progress answersLength={answers.length} deckLength={deck.length} icon={resultIcon} result={result} message={message} setStart={setStart}>
-                <LoadDeckAnswers />
+                {answers.map((item, i) => {
+                    return (
+                        <div key={i} className={item.color}>
+                            <ion-icon name={item.icon}></ion-icon>
+                        </div>
+                    )
+                })}
             </Progress>
         </div>
     )

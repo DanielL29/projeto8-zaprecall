@@ -12,7 +12,7 @@ export default function Start() {
         if(!start) {
             setGoal('')
             setDeck('')
-        }
+        } 
     }, [start])
 
     function limitGoal(e) {
@@ -29,7 +29,7 @@ export default function Start() {
                     <img src="./images/logo.png" alt="logo" />
                     <h1>ZapRecall</h1>
                     <select value={deck} onChange={(e) => setDeck(e.target.value)}>
-                        <option value="">Escolha seu deck</option>
+                        <option value="" disabled>Escolha seu deck</option>
                         {Object.values(decks).map((deck, i) => <option key={i} value={JSON.stringify(deck)}>{Object.keys(decks)[i]}</option>)}
                     </select>
                     <input type="number" max={8} disabled={deck === ''} placeholder={`Digite sua meta de zaps...(1-${deck !== '' ? JSON.parse(deck).length : 'a definir'})`} 
