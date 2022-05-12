@@ -47,6 +47,7 @@
     width: 30px;
     height: 20px;
     align-self: flex-end;
+    cursor: pointer;
     transition: all 200ms ease-in-out;
 }
 
