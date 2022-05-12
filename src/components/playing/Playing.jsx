@@ -4,7 +4,7 @@ import Progress from "../progress/Progress";
 import { deck } from "../../mock/data";
 import './Playing.css'
 
-export default function Playing({ setStart }) {
+export default function Playing({ setStart, goal }) {
     const [answers, setAnswers] = useState([])
     const [resultIcon, setResultIcon] = useState('sad')
     const [result, setResult] = useState('Putz...')
@@ -15,17 +15,18 @@ export default function Playing({ setStart }) {
     }, [answers])
 
     function showResult() {
+        let counter = 0
         for(let i = 0; i < answers.length; i++) {
-            if(answers[i].icon === 'close-circle') {
-                setResultIcon('sad')
-                setResult('Putz...')
-                setMessage('Ainda faltam alguns...Mas não desanime!')
-                return
-            } else {
-                setResultIcon('party')
-                setResult('Parabéns!')
-                setMessage('Você não esqueceu de nenhum flashcard!')
+            if(answers[i].icon === 'checkmark-circle') {
+                counter++
             }
+        }
+        console.log(goal)
+
+        if(counter >= Number(goal)) {
+            setResultIcon('party')
+            setResult('Parabéns!')
+            setMessage('Você não esqueceu de nenhum flashcard!')
         }
     }
 

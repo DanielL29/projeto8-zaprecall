@@ -37,8 +37,8 @@
 
     margin-top: 16px;
     margin-bottom: 14px;
-    width: 222px;
     text-align: center;
+    width: 235px;
 }
 
 .result>div {
@@ -51,11 +51,11 @@
 }
 
 .progress button {
-    margin-top: 23px;
+    margin-top: 15px;
     margin-bottom: 21px;
     width: 167px;
     height: 32px;
-    background: #FB6B6B;
+    background-color: #FB6B6B;
     border-radius: 5px;
     outline: none;
     border: none;
@@ -64,4 +64,8 @@
     font-weight: 400;
     font-size: 14px;
     text-align: center;
+}
+
+.progress button:hover {
+    filter: brightness(0.90);
 }
