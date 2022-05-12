@@ -7,10 +7,10 @@ export default function Start() {
 
     return (
         <div>
-            {start === true ? (
-                <Playing />
+            {start ? (
+                <Playing setStart={setStart} />
             ) : (
-                <div className={`start-screen`}>
+                <div className="start-screen">
                     <img src="./images/logo.png" alt="logo" />
                     <h1>ZapRecall</h1>
                     <button onClick={() => setStart(true)}>Iniciar Recall!</button>

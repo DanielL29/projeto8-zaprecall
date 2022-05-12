@@ -1,7 +1,7 @@
 import React from "react";
 import './Progress.css'
 
-export default function Progress({ deckLength, answersLength, children, icon, result, message }) {
+export default function Progress({ deckLength, answersLength, children, icon, result, message, setStart }) {
     return (
         <div className="progress">
             {answersLength === deckLength ? (
@@ -17,6 +17,7 @@ export default function Progress({ deckLength, answersLength, children, icon, re
             <div className="progress-icons">
                 {children}
             </div>
+            {answersLength === deckLength ? <button onClick={() => setStart(false)}>REINICIAR RECALL</button> : ''}
         </div>
     )
 }

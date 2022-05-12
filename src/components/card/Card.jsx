@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Card.css'
 
-export default function Card({ index, question, answer, large, answers, setAnswers, onClick }) {
+export default function Card({ index, question, answer, large, answers, setAnswers }) {
     const [playCard, setPlayCard] = useState(false)
     const [flip, setFlip] = useState(false)
     const [color, setColor] = useState('')
@@ -13,7 +13,6 @@ export default function Card({ index, question, answer, large, answers, setAnswe
         setColor(answerColor)
         setIcon(iconType)
         setAnswers([...answers, { color: answerColor, icon: iconType }])
-        // onClick(answerColor, iconType)
     }
 
     return (

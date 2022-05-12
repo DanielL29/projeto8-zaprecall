@@ -41,11 +41,27 @@
     text-align: center;
 }
 
-.result > div {
+.result>div {
     display: flex;
     margin-bottom: 14px;
 }
 
-.result > div h1 {
+.result>div h1 {
     margin-left: 12px;
+}
+
+.progress button {
+    margin-top: 23px;
+    margin-bottom: 21px;
+    width: 167px;
+    height: 32px;
+    background: #FB6B6B;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
 }
