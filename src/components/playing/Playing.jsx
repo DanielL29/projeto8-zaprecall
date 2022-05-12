@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../card/Card";
 import Progress from "../progress/Progress";
 import { deck } from "../../mock/data";
 import './Playing.css'
 
-function shuffleCards() {
-    return Math.random() - 0.5
-}
-deck.sort(shuffleCards)
-
 export default function Playing() {
+    const [answers, setAnswers] = useState([])
+
     function LoadDeck() {
         return deck.map((flashcard, i) => {
             return (
@@ -18,7 +15,19 @@ export default function Playing() {
                     question={flashcard.question} 
                     answer={flashcard.answer} 
                     large={flashcard.large} 
+                    setAnswers={setAnswers}
+                    answers={answers}
                 />
+            )
+        })
+    }
+
+    function LoadDeckAnswers() {
+        return answers.map((item, i) => {
+            return (
+                <div key={i} className={item.color}>
+                    <ion-icon name={item.icon}></ion-icon>
+                </div>
             )
         })
     }
@@ -30,7 +39,9 @@ export default function Playing() {
                 <h1>ZapRecall</h1>
             </div>
             <LoadDeck />
-            <Progress />
+            <Progress answersLength={answers.length} deckLength={deck.length}>
+                <LoadDeckAnswers />
+            </Progress>
         </div>
     )
 }

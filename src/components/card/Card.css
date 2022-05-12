@@ -90,14 +90,18 @@
     justify-content: space-between;
 }
 
-.red {
+.background-red {
     background-color: #FF3030;
 }
 
-.yellow {
+.background-yellow {
     background-color: #FF922E;
 }
 
-.green {
+.background-green {
     background-color: #2FBE34;
+}
+
+.underline {
+    text-decoration: line-through;
 }

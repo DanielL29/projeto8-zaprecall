@@ -1,20 +1,30 @@
 import React, { useState } from 'react'
 import './Card.css'
 
-export default function Card({ index, question, answer, large }) {
+export default function Card({ index, question, answer, large, answers, setAnswers }) {
     const [playCard, setPlayCard] = useState(false)
     const [flip, setFlip] = useState(false)
+    const [color, setColor] = useState('')
+    const [icon, setIcon] = useState('')
+    const isIcon = icon === ''
+
+    function finishCard(answerColor, iconType) {
+        setPlayCard(false)
+        setColor(answerColor)
+        setIcon(iconType)
+        setAnswers([...answers, { color: answerColor, icon: iconType }])
+    }
 
     return (
         <div>
-            {playCard === true ? (
-                <div className={`card selected ${flip === true ? 'flipped' : ''} ${large === true ? 'large' : '' }`}>
+            {playCard ? (
+                <div className={`card selected ${flip ? 'flipped' : ''} ${large ? 'large' : '' }`}>
                     <div className='face answer'>
                         <p>{answer}</p>
                         <div className="buttons">
-                            <button className='red'>Não lembrei</button>
-                            <button className='yellow'>Quase não lembrei</button>
-                            <button className='green'>Zap!</button>
+                            <button className='background-red' onClick={() => finishCard('red', 'close-circle')}>Não lembrei</button>
+                            <button className='background-yellow' onClick={() => finishCard('yellow', 'help-circle')}>Quase não lembrei</button>
+                            <button className='background-green' onClick={() => finishCard('green', 'checkmark-circle')}>Zap!</button>
                         </div>
                     </div>
                     <div className='face question'>
@@ -23,12 +33,11 @@ export default function Card({ index, question, answer, large }) {
                     </div>
                 </div>
             ) : (
-                <div className='card' onClick={() => setPlayCard(true)}>
-                    <p>Pergunta {index}</p>
-                    <ion-icon name="play-outline"></ion-icon>
+                <div className={isIcon ? 'card' : `card ${color}`} onClick={isIcon ? () => setPlayCard(true) : () => false}>
+                    <p className={isIcon ? '' : `underline ${color}`}>Pergunta {index} {status}</p>
+                    <ion-icon name={isIcon ? 'play-outline' : icon}></ion-icon>
                 </div>
             )}
         </div>
-
     )
 }

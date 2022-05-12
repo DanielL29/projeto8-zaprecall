@@ -1,10 +1,13 @@
 import React from "react";
 import './Progress.css'
 
-export default function Progress() {
+export default function Progress({ deckLength, answersLength, color, children }) {
     return (
         <div className="progress">
-            <p>0/4 CONCLUÍDOS</p>
+            <p>{answersLength}/{deckLength} CONCLUÍDOS</p>
+            <div className={color}>
+                {children}
+            </div>
         </div>
     )
 }

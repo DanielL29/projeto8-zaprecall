@@ -48,3 +48,15 @@ body {
 	font-family: 'Righteous', cursive;
 	background-color: #FB6B6B;
 }
+
+.red {
+    color: #FF3030;
+}
+
+.yellow {
+    color: #FF922E;
+}
+
+.green {
+    color: #2FBE34;
+}
