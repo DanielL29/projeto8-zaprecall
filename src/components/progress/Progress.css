@@ -16,10 +16,14 @@
     color: #333333;
 }
 
-.progress > div {
+.progress .progress-icons {
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin-top: 7px;
+}
+
+.progress .progress-icons ion-icon {
+    font-size: 23px;
 }

@@ -20,6 +20,12 @@
 .card ion-icon {
     width: 23px;
     height: 23px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.card ion-icon:hover {
+    transform: scale(110%);
 }
 
 .card.selected {
@@ -41,7 +47,7 @@
     width: 30px;
     height: 20px;
     align-self: flex-end;
-    transition: all 400ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .card.selected img:hover {
@@ -61,6 +67,7 @@
 
 .answer {
     transform: rotateY(180deg);
+    z-index: 1;
 }
 
 .card.selected.flipped .answer {

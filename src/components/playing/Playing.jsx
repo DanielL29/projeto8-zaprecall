@@ -7,6 +7,10 @@ import './Playing.css'
 export default function Playing() {
     const [answers, setAnswers] = useState([])
 
+    // function getAnswers(answerColor, iconType) {
+    //     setAnswers([...answers, { color: answerColor, icon: iconType }])
+    // }
+
     function LoadDeck() {
         return deck.map((flashcard, i) => {
             return (
@@ -17,6 +21,7 @@ export default function Playing() {
                     large={flashcard.large} 
                     setAnswers={setAnswers}
                     answers={answers}
+                    // onClick={(answerColor, iconType) => getAnswers(answerColor, iconType)}
                 />
             )
         })
@@ -38,7 +43,7 @@ export default function Playing() {
                 <img src="./images/logo.png" alt="small-logo" />
                 <h1>ZapRecall</h1>
             </div>
-            <LoadDeck />
+            {LoadDeck()}
             <Progress answersLength={answers.length} deckLength={deck.length}>
                 <LoadDeckAnswers />
             </Progress>
