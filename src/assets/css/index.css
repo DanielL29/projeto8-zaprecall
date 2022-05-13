@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&display=swap');
+
+body {
+	font-family: 'Recursive', sans-serif;
+	font-weight: 400;
+	background-color: #FB6B6B;
+}
+
+.red {
+    color: #FF3030;
+}
+
+.yellow {
+    color: #FF922E;
+}
+
+.green {
+    color: #2FBE34;
+}

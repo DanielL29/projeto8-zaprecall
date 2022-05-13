@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../card/Card";
 import Progress from "../progress/Progress";
+import logoImg from '../../assets/images/logo.png'
 import './Playing.css'
 
 export default function Playing({ setStart, goal, deck }) {
@@ -30,7 +31,7 @@ export default function Playing({ setStart, goal, deck }) {
     return (
         <div className="playing">
             <div className="title">
-                <img src="./images/logo.png" alt="small-logo" />
+                <img src={logoImg} alt="small-logo" />
                 <h1>ZapRecall</h1>
             </div>
             {deck.map((flashcard, i) => {

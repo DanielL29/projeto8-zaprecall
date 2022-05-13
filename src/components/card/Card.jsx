@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import flipImg from '../../assets/images/flip.png'
 import './Card.css'
 
 export default function Card({ index, question, answer, large, answers, setAnswers }) {
@@ -29,7 +30,7 @@ export default function Card({ index, question, answer, large, answers, setAnswe
                     </div>
                     <div className='face question'>
                         <p>{question}</p>
-                        <img src="./images/flip.png" alt="flip" onClick={() => setFlip(true)} />
+                        <img src={flipImg} alt="flip" onClick={() => setFlip(true)} />
                     </div>
                 </div>
             ) : (

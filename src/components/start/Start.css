@@ -43,6 +43,28 @@
     width: 242px;
 }
 
+.start-screen .flashing {
+    animation-name: flashing;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flashing {
+    0% {
+        transform: scale(1.08);
+    }
+    25% {
+        transform: scale(1.04);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+    100% {
+        transform: scale(1.08);
+    }
+}
+
 input::placeholder {
     color: #ADADAD;
 }

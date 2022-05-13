@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Playing from '../playing/Playing'
 import { decks } from "../../mock/data"
+import logoImg from '../../assets/images/logo.png'
 import './Start.css'
 
 export default function Start() {
@@ -26,9 +27,9 @@ export default function Start() {
                 <Playing setStart={setStart} goal={goal} deck={JSON.parse(deck)} />
             ) : (
                 <div className={`start-screen ${goal >= 1 ? 'unlocked' : ''}`}> 
-                    <img src="./images/logo.png" alt="logo" />
+                    <img src={logoImg} alt="logo" />
                     <h1>ZapRecall</h1>
-                    <select value={deck} onChange={(e) => setDeck(e.target.value)}>
+                    <select className={deck === '' ? 'flashing' : ''} value={deck} onChange={(e) => setDeck(e.target.value)}>
                         <option value="" disabled>Escolha seu deck</option>
                         {Object.values(decks).map((deck, i) => <option key={i} value={JSON.stringify(deck)}>{Object.keys(decks)[i]}</option>)}
                     </select>

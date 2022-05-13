@@ -1,5 +1,5 @@
 import React from 'react';
-import Start from './components/start/Start';
+import Start from './start/Start';
 
 export default function App() {
   return (
